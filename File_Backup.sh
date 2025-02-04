@@ -1,6 +1,6 @@
 #!/bin/bash
-backup_dir="/home/kali/tmp"
-source_dir="/home/kali/Downloads"
+source_dir=$1
+backup_dir=$2
 
 mkdir -p "$backup_dir"
 
