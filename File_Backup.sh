@@ -1,5 +1,10 @@
 #!/bin/bash
-backup_dir="/path/to/backup"
-source_dir="/path/to/source"
+backup_dir="/home/kali/tmp"
+source_dir="/home/kali/Downloads"
 
-tar -czf "$backup_dir/backup_$(date+%Y%m%d_%H%M%S).tar.gz" "$source_dir"
+mkdir -p "$backup_dir"
+
+# Create the backup
+tar -czf "$backup_dir/backup_$(date +%Y%m%d_%H%M%S).tar.gz" "$source_dir"
+
+echo "Backup created at $backup_dir"
