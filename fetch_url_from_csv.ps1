@@ -12,6 +12,12 @@ foreach ($line in $lines) {
     # Get the item
     $Item = $fields[-2]
 
-    # Output the item
-    Write-Output $Item
+    # Output the last item
+    Write-Output $Item | 
+    ForEach-Object { 
+        if ($_ -match "\S* \S* \S* \S* \S* (\S*\.\S*\.\S*) .*") { 
+            $matches[1] 
+        } 
+    } | 
+    Sort-Object
 }
