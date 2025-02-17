@@ -12,7 +12,7 @@ foreach ($line in $lines) {
     # Get the item
     $Item = $fields[-2]
 
-    # Output the last item
+    # Output the item, sorting over output with regex to only include urls
     Write-Output $Item | 
     ForEach-Object { 
         if ($_ -match "\S* \S* \S* \S* \S* (\S*\.\S*\.\S*) .*") { 
